@@ -187,23 +187,28 @@ Temperature can affect gas viscosity. Higher temperatures can reduce the viscosi
       ReservoirPorosity = beta2 
       ReservoirPermeability = beta3 
       ReservoirTemperature = beta4 
+
+
       # Create a new data instance for gas production prediction
       new_data_instance_gas_production = np.array([6.0, 3.0, 2.0, 1.0])  # Replace with your own feature values
+
+
       # Normalize the new data instance using the same mean and standard deviation as the training data
       #new_data_instance_normalized = (
           #(new_data_instance_gas_production - np.mean(X1)) / np.std(X1),
           #(new_data_instance_gas_production - np.mean(X2)) / np.std(X2),
           #(new_data_instance_gas_production - np.mean(X3)) / np.std(X3),
-          #(new_data_instance_gas_production - np.mean(X4)) / np.std(X4),
-      #)
+          #(new_data_instance_gas_production - np.mean(X4)) / np.std(X4),)
+      
       
       # The above is optional, it depends on the instance data you use. In this example I will not normalize the new data.
       # If you like to normalize it, just remove #.
       
       
       new_data_instance_normalized = new_data_instance_gas_production
-      # Make a prediction for gas production using the named dependent variables
-      gas_production_prediction = (
+
+        # Make a prediction for gas production using the named dependent variables
+        gas_production_prediction = (
           Intercept + WellDepth * new_data_instance_normalized[0]
           + ReservoirPorosity * new_data_instance_normalized[1]
           + ReservoirPermeability * new_data_instance_normalized[2]
