@@ -78,7 +78,7 @@ Track the cost function's evolution over training iterations, providing insights
   ![image](https://github.com/RediZypce/MultipleRegression_fromScratch/assets/109640560/f120384a-707e-4524-8bf8-e7455b3b992b)
 
   
-  # Gradient Descent with animation
+      # Gradient Descent with animation
   for epoch in range(epochs):
       # Calculate predicted values
       predicted = beta0 + beta1 * X1_normalized + beta2 * X2_normalized + beta3 * X3_normalized + beta4 * X4_normalized
