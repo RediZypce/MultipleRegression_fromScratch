@@ -78,44 +78,44 @@ Track the cost function's evolution over training iterations, providing insights
   ![image](https://github.com/RediZypce/MultipleRegression_fromScratch/assets/109640560/f120384a-707e-4524-8bf8-e7455b3b992b)
 
   
-            # Gradient Descent with animation
+        # Gradient Descent with animation
         for epoch in range(epochs):
             # Calculate predicted values
-      predicted = beta0 + beta1 * X1_normalized + beta2 * X2_normalized + beta3 * X3_normalized + beta4 * X4_normalized
+            predicted = beta0 + beta1 * X1_normalized + beta2 * X2_normalized + beta3 * X3_normalized + beta4 * X4_normalized
       
-      # Calculate the cost (mean squared error)
-      error = predicted - Y
-      cost = np.mean(error ** 2)
-      
-      # Calculate evaluation metrics (MAE and MSE)
-      mae = np.mean(np.abs(error))
-      mse = cost
-      
-      # Calculate gradients
-      grad0 = np.mean(error)
-      grad1 = np.mean(error * X1_normalized)
-      grad2 = np.mean(error * X2_normalized)
-      grad3 = np.mean(error * X3_normalized)
-      grad4 = np.mean(error * X4_normalized)
-      
-      # Update parameters
-      beta0 -= learning_rate * grad0
-      beta1 -= learning_rate * grad1
-      beta2 -= learning_rate * grad2
-      beta3 -= learning_rate * grad3
-      beta4 -= learning_rate * grad4
-      
-      # Store parameter and cost history for visualization
-      params_history.append([beta0, beta1, beta2, beta3, beta4])
-      cost_history.append(cost)
-      
-      # Store evaluation metrics
-      mae_history.append(mae)
-      mse_history.append(mse)
-      
-      # Plot the updated regression line for each iteration
-      if epoch % 10 == 0:
-          ax.plot(X1_normalized, X2_normalized, predicted, label=f'Iteration {epoch}')
+            # Calculate the cost (mean squared error)
+            error = predicted - Y
+            cost = np.mean(error ** 2)
+            
+            # Calculate evaluation metrics (MAE and MSE)
+            mae = np.mean(np.abs(error))
+            mse = cost
+            
+            # Calculate gradients
+            grad0 = np.mean(error)
+            grad1 = np.mean(error * X1_normalized)
+            grad2 = np.mean(error * X2_normalized)
+            grad3 = np.mean(error * X3_normalized)
+            grad4 = np.mean(error * X4_normalized)
+            
+            # Update parameters
+            beta0 -= learning_rate * grad0
+            beta1 -= learning_rate * grad1
+            beta2 -= learning_rate * grad2
+            beta3 -= learning_rate * grad3
+            beta4 -= learning_rate * grad4
+            
+            # Store parameter and cost history for visualization
+            params_history.append([beta0, beta1, beta2, beta3, beta4])
+            cost_history.append(cost)
+            
+            # Store evaluation metrics
+            mae_history.append(mae)
+            mse_history.append(mse)
+            
+            # Plot the updated regression line for each iteration
+            if epoch % 10 == 0:
+                ax.plot(X1_normalized, X2_normalized, predicted, label=f'Iteration {epoch}')
 
       # Visualize cost over iterations
       plt.figure()
